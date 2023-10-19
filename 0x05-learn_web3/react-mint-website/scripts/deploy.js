@@ -6,19 +6,35 @@
 // global scope, and execute the script.
 import hre from "hardhat";
 
-const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-const unlockTime = currentTimestampInSeconds + 60;
+const main = async () => {
+  const RoboPunksNFT = await hre.ethers.getContractFactory("RoboPunksNFT")
+  const roboPunksNFT = await RoboPunksNFT.deploy()
 
-const lockedAmount = hre.ethers.parseEther("0.001");
+  await roboPunksNFT.deployed()
 
-const lock = await ethers.deployContract("Lock", [unlockTime], {
-  value: lockedAmount,
-});
+  console.info(`RoboPunksNFT deployed to ${roboPunksNFT.address}`)
+}
 
-await lock.waitForDeployment();
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.info(err)
+    process.exit(1)
+  })
 
-console.log(
-  `Lock with ${ethers.formatEther(
-    lockedAmount
-  )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-);
+// const currentTimestampInSeconds = Math.round(Date.now() / 1000);
+// const unlockTime = currentTimestampInSeconds + 60;
+
+// const lockedAmount = hre.ethers.parseEther("0.001");
+
+// const lock = await ethers.deployContract("Lock", [unlockTime], {
+//   value: lockedAmount,
+// });
+
+// await lock.waitForDeployment();
+
+// console.log(
+//   `Lock with ${ethers.formatEther(
+//     lockedAmount
+//   )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
+// );
