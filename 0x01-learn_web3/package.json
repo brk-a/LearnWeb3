@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "compile": "solcjs --bin --abi --include-path node_modules/ --basepath . -o . SimpleStorage.sol"
+    }
+}

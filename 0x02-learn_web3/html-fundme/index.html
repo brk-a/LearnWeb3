@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FN FundMe App</title>
+    <script src="index.js" type="text/javascript" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.1/ethers.umd.min.js"
+        integrity="sha512-i/G7kLmYAnT7Q0oBL5EryMwK+9sGtncvmvXt/8Q7EUvgCU8pt3OJvHAu9It5lOvOCqDbgqS9Qikpwk6NTFVe1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+</head>
+
+<body>
+    <h1>FN's Dapp</h1>
+    <div>
+        <button id="connectButton" onclick="connect()">
+            Connect
+        </button>
+        <button id="balanceButton" onclick="getBalance()">
+            Balance
+        </button>
+        <button id="withdrawButton" onclick="withdraw()">
+            Withdraw
+        </button>
+    </div>
+    <div>
+        <label for="fund">enter ETH amount</label>
+        <input type="text" id="ethAmount" placeholder="0.1" />
+        <button id="fund" onclick="fund()">
+            Fund
+        </button>
+    </div>
+</body>
+
+</html>

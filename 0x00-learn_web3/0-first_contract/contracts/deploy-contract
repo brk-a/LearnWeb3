@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+#see `Remix` docs to configure `geth`
+geth --http --http.corsdomain https://remix.ethereum.org
+
+#run remix and a local `geth` test node
+echo "enter path to test console"
+read $PATH_TO_TEST_CHAIN
+geth --http --http.corsdomain="https://remix.ethereum.org" --http.apiweb3,eth,debug,personal,net --vmdebug --datadir $PATH_TO_TEST_CHAIN --dev-console
+

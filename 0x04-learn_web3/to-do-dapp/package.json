@@ -1,0 +1,30 @@
+{
+  "name": "to-do-dapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bufferutil": "^4.0.8",
+    "ethers": "^6.8.0",
+    "next": "13.5.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "utf-8-validate": "^5.0.10",
+    "web3modal": "^1.9.12"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.5",
+    "hardhat": "^2.18.1",
+    "postcss": "^8",
+    "tailwindcss": "^3"
+  }
+}
