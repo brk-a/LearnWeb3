@@ -12,7 +12,7 @@ error WrongMintValue();
 error SoldOut();
 error ExceededMaxWallet();
 
-contract RoboPunkNFT is ERC721, Ownable {
+abstract contract RoboPunkNFT is ERC721, Ownable {
     uint256 public mintPrice;
     uint256 public totalSupply;
     uint256 public maxSupply;
@@ -43,8 +43,8 @@ contract RoboPunkNFT is ERC721, Ownable {
     function tokenURI(uint256 _tokenId)
         public view override
         returns(string memory){
-            if(!_exists(_tokenId)){
-                revert TokenDoesNotExist;
+            if(!bool(_tokenId)){
+                revert TokenDoesNotExist();
             }
             return string(
                 abi.encodePacked(
@@ -58,23 +58,23 @@ contract RoboPunkNFT is ERC721, Ownable {
         external onlyOwner{
             (bool success,) = withdrawWallet.call{value: address(this).balance}('');
             if(!success){
-                revert WithdrawFailed;
+                revert WithdrawFailed();
             }
     }
 
     function mint(uint256 _quantity)
         public payable{
             if(!isPublicMintEnabled){
-                revert MintNotEnabled;
+                revert MintNotEnabled();
             }
             if(!(msg.value==_quantity+mintPrice)){
-                revert WrongMintValue;
+                revert WrongMintValue();
             }
             if(!(totalSupply+_quantity<=maxSupply)){
-                revert SoldOut;
+                revert SoldOut();
             }
             if(!(addressToWalletMints[msg.sender]+_quantity<=maxPerWallet)){
-                revert ExceededMaxWallet;
+                revert ExceededMaxWallet();
             }
 
             for(uint256 i=0; i<_quantity; ++i){
