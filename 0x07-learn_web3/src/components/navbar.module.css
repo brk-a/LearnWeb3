@@ -1,0 +1,146 @@
+.navbar{
+    width: 85%;
+    margin: 0 auto;
+    background-color: #1f1a36;
+    color: #9a02ac;
+    padding: 1rem;
+    margin-block: 1rem;
+    border-radius: .5rem;
+}
+
+.navbar__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+}
+.left h1{
+    line-height: 0;
+    color: white;
+    transform: skewX(-25deg);
+    text-transform: uppercase;
+    background-color: #9a02ac;
+    position: relative;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.left h1:hover{
+    color: #9a02ac;
+}
+.mobile{
+    display: none;
+}
+.right{
+    position: relative;
+}
+.right button{
+    color: #9a02ac;
+    background: transparent;
+    border: 1px solid #9a02ac;
+    border-radius: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.2rem;
+}
+.connected{
+    position: relative;
+}
+.userModal{
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: #1f1a36;
+    width: 15rem;
+}
+.user__box{
+    text-align: center;
+    position: relative;
+}
+.closeBtn{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+.closeBtn:hover{
+    transform: rotate(-45deg);
+}
+.price{
+    width: 87%;
+    margin: 0 auto;
+    color: #9a02ac;
+    margin-block: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    overflow: hidden;
+}
+.price__box{
+    background-color: #1f1a36;
+    border-radius: .5rem;
+    display: flex;
+    padding-left: 1rem;
+    line-height: 2rem;
+    align-items: center;
+    gap: 2rem;
+}
+.etherPrice{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.price__box h2{
+    font-size: 1.2rem;
+    color: white;
+}
+.etherPrice p{
+    line-height: 0.5;
+    font-weight: 500;
+    font-size: 14px;
+}
+.supplyEther{
+    display: flex;
+}
+.supplyIcon{
+    font-size: 3rem;
+    position: relative;
+    margin-right: 20px;
+    top: 120px;
+}
+.logoWidth{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-left: 1px solid #9a02ac;
+    text-align: center;
+    padding-left: 2.5rem;
+}
+.logoWidth p{
+    line-height: 1.3;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #9a02ac;
+    padding: 1rem;
+    border-radius: .2rem;
+}
+
+@media screen and (max-width:45em) {
+    .navbar{
+        width: 100%;
+        margin-block: 0rem;
+        padding: 0rem;
+        border-radius: 0rem;
+    }
+    .navbar__container{
+        padding: 1rem;
+        
+    }
+}

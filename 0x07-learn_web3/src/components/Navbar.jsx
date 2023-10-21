@@ -113,7 +113,7 @@ const Navbar = () => {
                     <div className={Style.left}>
                         <Link href="/">
                             <div>
-                                <h1 className={Style.desktop}>FN Etherscan</h1>
+                                <h1>FN Etherscan</h1>
                                 <h1 className={Style.mobile}>
                                     <Image src={logoNoBg} width={150} height={150} alt="logo" />
                                 </h1>
@@ -128,7 +128,7 @@ const Navbar = () => {
                                 </button>
                                 {openModal ? (
                                     <div className={Style.userModal}>
-                                        <div className={Style.user_box}>
+                                        <div className={Style.user__box}>
                                             <div className={Style.closeBtn}>
                                                 <MdOutlineClose onClick={() => openUserInfo()} />
                                             </div>
@@ -161,10 +161,10 @@ const Navbar = () => {
                 <div className={Style.price__box}>
                     <div className={Style.etherPrice}>
                         <div>
-                            <Image src={etherLogo} alt="ether" width={30} height={30}/>
+                            <Image src={etherLogo} alt="ether" width={100} height={30}/>
                         </div>
-                        <div>
-                            <h4>Ether Price</h4>
+                        <div className="flex flex-col gap-4">
+                            <h2>Ether Price</h2>
                             <p>USD 1234.56</p>
                             <p>BTC 0.123456</p>
                             <p>Updated price</p>
@@ -175,7 +175,7 @@ const Navbar = () => {
                             <TbChartArrowsVertical className={Style.supplyIcon}/>
                         </div>
                         <div>
-                            <h4>Total ether supply</h4>
+                            <h2>Total ether supply</h2>
                             <p>USD 1234.56</p>
                             <p>BTC 0.123456</p>
                             <p>Updated price</p>
