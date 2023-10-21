@@ -1,7 +1,7 @@
 "use client"
 
 import EnterLottery from '../../components/EnterLottery'
-import Header from '../../components/ManualHeader'
+import Header from '../../components/AutoHeader'
 
 const Home = () => {
   return (

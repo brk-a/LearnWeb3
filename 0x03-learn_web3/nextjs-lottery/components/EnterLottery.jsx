@@ -1,5 +1,5 @@
-import {useWeb3Contract,  useMoralis} from "react-moralis"
-import { abi, contractAddresses} from "../constants"
+import { useWeb3Contract, useMoralis } from "react-moralis"
+import { abi, contractAddresses } from "../constants"
 import { useEffect, useState } from "react"
 import { ethers } from "ethers"
 import { useNotification } from "web3uikit"
@@ -10,13 +10,13 @@ const EnterLottery = () => {
     const [recentWinner, setRecentWinner] = useState("0")
     const dispatch = useNotification()
 
-    const {chainId: chainIdHex, isWeb3Enabled} = useMoralis()
+    const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
     const chainId = parseInt(chainIdHex)
     const contractAddress = chainIdHex in contractAddresses
         ? contractAddresses[chainId][0]
         : null
 
-    const {runContractFunction: enterRaffle} = useWeb3Contract({
+    const { runContractFunction: enterRaffle, isFetching, isLoading } = useWeb3Contract({
         abi,
         contractAddress,
         functionName: "enterRaffle",
@@ -24,7 +24,7 @@ const EnterLottery = () => {
         msgValue: entranceFee,
     })
 
-    const {runContractFunction: getEntranceFee} = useWeb3Contract({
+    const { runContractFunction: getEntranceFee } = useWeb3Contract({
         abi,
         contractAddress,
         functionName: "getEntranceFee",
@@ -32,7 +32,7 @@ const EnterLottery = () => {
         // msgValue: "", //not required; this is partly why it is used here
     })
 
-    const {runContractFunction: getNumberOfPlayers} = useWeb3Contract({
+    const { runContractFunction: getNumberOfPlayers } = useWeb3Contract({
         abi,
         contractAddress,
         functionName: "getNumberOfPlayers",
@@ -40,7 +40,7 @@ const EnterLottery = () => {
         // msgValue: entranceFee,
     })
 
-    const {runContractFunction: getRecentWinner} = useWeb3Contract({
+    const { runContractFunction: getRecentWinner } = useWeb3Contract({
         abi,
         contractAddress,
         functionName: "getRecentWinner",
@@ -59,7 +59,7 @@ const EnterLottery = () => {
 
     const handleEnterRaffle = async () => {
         await enterRaffle({
-            onSuccess: {handleSuccess},
+            onSuccess: { handleSuccess },
             onError: err => console.info(err)
         })
     }
@@ -81,28 +81,41 @@ const EnterLottery = () => {
     }
 
     useEffect(() => {
-        if(isWeb3Enabled){
+        if (isWeb3Enabled) {
             updateUI()
         }
     }, [isWeb3Enabled])
 
-  return (
-    <div>
-        { raffleAddress ? (
+    return (
+        <div className="p-5">
+            {raffleAddress ? (
                 <>
-                <button onClick={handleEnterRaffle}>Enter raffle</button>
-                <h3>Entrance fee is</h3>
-                <h1>{ethers.utils.formatUnits(entranceFee, "ether")} ETH </h1>
-                <p>Players: {numPlayers}</p>
-                <p>Recent winner: {recentWinner}</p>
+                    <button
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
+                        onClick={handleEnterRaffle}
+                        disabled={isLoading || isFetching}
+                    >
+                        {isFetching || isLoading ? (
+                            <div className="animated-spin spinner-border h-8 w-8 border-b-2 rounded-full"></div>
+                        ) : (
+                            <div className="text-white font-semibold">
+                                Enter raffle
+                            </div>
+                        )}
+                    </button>
+                    <div>
+                        Entrance fee is {ethers.utils.formatUnits(entranceFee, "ether")} ETH
+                    </div>
+                    <div>Players: {numPlayers}</div>
+                    <div>Recent winner: {recentWinner}</div>
                 </>
-            ): (
+            ) : (
                 <>
-                <h1>Raffle address not detected</h1>
+                    <h1>Raffle address not detected</h1>
                 </>
-        )}
-    </div>
-  )
+            )}
+        </div>
+    )
 }
 
 export default EnterLottery
