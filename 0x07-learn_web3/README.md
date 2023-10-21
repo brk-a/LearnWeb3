@@ -6,7 +6,7 @@
 ## stack
 * Next.js | React.js
 * Infura (to connect w. mainnet)
-* Solidity
+* ~~Solidity~~
 * Ether.js
 * EthereScan API
 

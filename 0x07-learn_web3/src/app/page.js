@@ -1,8 +1,11 @@
 "use client"
 
+
  const Home = () => {
   return (
-    <></>
+    <>
+    Home
+    </>
   )
 }
 
