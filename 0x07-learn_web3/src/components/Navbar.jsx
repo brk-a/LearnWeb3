@@ -133,7 +133,7 @@ const Navbar = () => {
                                                 <MdOutlineClose onClick={() => openUserInfo()} />
                                             </div>
                                             {/* <FiUser className={Style.userIcon} /> */}
-                                            <Image src={user} alt="user" width={50} height={50}/>
+                                            <Image src={user} alt="user" width={50} height={50} />
                                             <p>
                                                 User: &nbsp; {userAccount.slice(0, 6)}...{userAccount.slice(userAccount.length - 4)}
                                             </p>
@@ -161,7 +161,7 @@ const Navbar = () => {
                 <div className={Style.price__box}>
                     <div className={Style.etherPrice}>
                         <div>
-                            <Image src={etherLogo} alt="ether" width={100} height={30}/>
+                            <Image src={etherLogo} alt="ether" width={100} height={30} />
                         </div>
                         <div className="flex flex-col gap-4">
                             <h2>Ether Price</h2>
@@ -172,7 +172,7 @@ const Navbar = () => {
                     </div>
                     <div className={Style.supplyEther}>
                         <div>
-                            <TbChartArrowsVertical className={Style.supplyIcon}/>
+                            <TbChartArrowsVertical className={Style.supplyIcon} />
                         </div>
                         <div>
                             <h2>Total ether supply</h2>
@@ -181,18 +181,19 @@ const Navbar = () => {
                             <p>Updated price</p>
                         </div>
                     </div>
-                    <div className={Style.price__box}>
-                        <div className={Style.tokenBox__logo}>
-                            <Image src={logoNoBg} alt="logo-no-bg" width={200} height={200}/>
-                        </div>
-                        <div className={Style.logoWidth}>
-                            <p>ERC20 token</p>
-                            <p>ERC21 token</p>
-                            <p>ERC1155 token</p>
-                            <p>Contract</p>
-                        </div>
+                </div>
+                <div className={Style.price__box}>
+                    <div className={Style.tokenBox__logo}>
+                        <Image src={logoNoBg} alt="logo-no-bg" width={200} height={200} />
+                    </div>
+                    <div className={Style.logoWidth}>
+                        <p>ERC20 token</p>
+                        <p>ERC21 token</p>
+                        <p>ERC1155 token</p>
+                        <p>Contract</p>
                     </div>
                 </div>
+                {/* </div> */}
             </div>
         </div>
     )
