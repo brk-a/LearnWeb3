@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useContext } from "react"
-import { useRouter } from "next/router"
+import { useRouter } from 'next/navigation'
 import Image from "next/image"
 import Link from "next/link"
 import { ethers } from "ethers"
@@ -37,10 +37,10 @@ const Home = () => {
                         type="text"
                         placeholder="Enter address"
                         id="accountAddress"
-                        value={inputAccount}
+                        value={userAccount}
                         onChange={(e) => setUserAccount((e.target.value).trim())}
                     />
-                    <Link href={{pathname: "/account", query: userAccount}}>
+                    <Link href={{pathname: "/account", query: userAccount}} legacyBehavior>
                         <a>
                         <SiMinutemailer onClick={accountAddress}/>
                         </a>
@@ -67,7 +67,7 @@ const Home = () => {
                                         <p>
                                             <span>
                                                 Miner: &nbsp; &nbsp;
-                                                <Link className={Style.link} href={{pathname: "/account", query: txn.miner}}>
+                                                <Link className={Style.link} href={{pathname: "/account", query: txn.miner}} legacyBehavior>
                                                     <a>
                                                         {txn.miner.slice(0, 6)}...{txn.miner.slice(-4)}
                                                     </a>
@@ -75,7 +75,7 @@ const Home = () => {
                                             </span>
                                         </p>
                                         <span>
-                                            <Link className={Style.link} href={{pathname: "/account", query: txn.number}}>
+                                            <Link className={Style.link} href={{pathname: "/account", query: txn.number}} legacyBehavior>
                                                 <a>
                                                     {txn.transactions.length}
                                                 </a>
@@ -104,7 +104,7 @@ const Home = () => {
                                     <div>
                                         <p className={Style.bx}>TX</p>
                                     </div>
-                                    <Link href={{pathname: "/transaction", query: tx }}>
+                                    <Link href={{pathname: "/transaction", query: tx }} legacyBehavior>
                                         <a>Hash: &nbsp; {tx.slice(0, 6)}...{tx.slice(-4)}</a>
                                     </Link>
                                 </div>
