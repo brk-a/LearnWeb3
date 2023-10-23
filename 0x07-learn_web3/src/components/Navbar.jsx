@@ -10,7 +10,7 @@ import { TbChartArrowsVertical } from "react-icons/tb"
 import Style from "./navbar.module.css"
 import etherLogo from "../assets/eth-logo.png"
 import logoNoBg from "../assets/logo-no-bg.png"
-import user from "../assets/bored-ape.jpeg"
+import user from "../assets/bored-ape.png"
 
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
