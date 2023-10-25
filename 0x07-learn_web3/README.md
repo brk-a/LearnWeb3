@@ -2,6 +2,8 @@
 
 ## Etherscan Clone
 
+<img src="./src/assets/Screenshot_2023-10-25_08-59-35.png"/>
+
 
 ## stack
 * Next.js | React.js
