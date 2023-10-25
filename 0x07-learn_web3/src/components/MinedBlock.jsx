@@ -11,7 +11,7 @@ const MinedBlock = ({ handleClick, blockMinedByAddress }) => {
         <div>
             {blockMinedByAddress === 0 ? (
                 <div className={Style.sorry}>
-                    No data is available
+                    <h1>No data is available</h1>
                 </div>
             ) : (
                 <div className={Style.dataTable}>
