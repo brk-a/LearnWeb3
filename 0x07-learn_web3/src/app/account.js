@@ -65,7 +65,7 @@ const account = () => {
                 console.info("accountData: txnHistoryData is not ok")
             }
 
-            /**txn hist internal by hash */
+            /**txn hist internal by address */
             const txnHistInternalResponse = await axios.get(`https://api.etherscan.io/api?module=account&action=txlistinternal&address=${acc}&startblock=0&endblock=2702578&page=1&offset=10&sort=asc&apikey=${apiKey}`)
             setInternalByAddress(txnHistInternalResponse.data.result)
 
