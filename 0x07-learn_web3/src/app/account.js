@@ -89,6 +89,10 @@ const account = () => {
             const erc1155Response = await axios.get(`https://api.etherscan.io/api?module=account&action=token1155tx&contractaddress=0x76be3b62873462d2142405439777e971754e8e77&address=${acc}&page=1&offset=100&startblock=0&endblock=99999999&sort=asc&apikey=${apiKey}`)
             setERC1155(erc1155Response.data.result)
 
+            /**total txns */
+            const totalTransactions = await provider.getTransactionCount(acc)
+            setTotalTxns(totalTransactions)
+
         } catch (error) {
             console.info("accountDataError", error)
         }

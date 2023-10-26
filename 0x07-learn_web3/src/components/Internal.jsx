@@ -30,7 +30,7 @@ const Internal = ({internalByAddress, handleClick}) => {
                 <div className={Style.tableInfo}>
                     {internalByAddress.map((obj, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p>
+                            <p className={Style.toLink}>
                                 <Link href={{pathname: "/block/", query: obj.blockNumber}} legacyBehavior>
                                     <a>{obj.blockNumber}</a>
                                 </Link>
@@ -74,7 +74,7 @@ const Internal = ({internalByAddress, handleClick}) => {
                 <div className={Style.tableInfo}>
                     {internalByAddress.map((obj, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p>
+                            <p className={Style.toLink}>
                                 <Link href={{pathname: "/account/", query: obj.from}} legacyBehavior>
                                     <a onClick={handleClick}>
                                         {obj.from.slice(0, 10)}...{obj.from.slice(-4)}

@@ -59,7 +59,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.timeStamp}
                             </p>
                         </div>
@@ -73,7 +73,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.from.slice(0, 10)}...{hist.from.slice(-4)}
                             </p>
                         </div>
@@ -105,7 +105,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.value.slice(0, 6)}...
                             </p>
                         </div>
@@ -119,7 +119,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.gasPrice}
                             </p>
                         </div>
@@ -133,7 +133,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.blockHash.slice(0, 10)}...{hist.blockHash.slice(-4)}
                             </p>
                         </div>
@@ -147,7 +147,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.confirmations || hist.confirmation}
                             </p>
                         </div>
@@ -161,7 +161,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.cumulativeGasUsed}
                             </p>
                         </div>
@@ -175,7 +175,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.gas}
                             </p>
                         </div>
@@ -189,7 +189,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.gasUsed}
                             </p>
                         </div>
@@ -203,7 +203,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.nonce}
                             </p>
                         </div>
@@ -217,7 +217,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.transactionIndex}
                             </p>
                         </div>
@@ -231,7 +231,7 @@ const Transaction = ({ accountHistory, handleClick }) => {
                 <div className={Style.tableInfo}>
                     {accountHistory.map((hist, i) => (
                         <div key={i} className={Style.transHash}>
-                            <p className={Style.toLink}>
+                            <p>
                                 {hist.txreceipt_status}
                             </p>
                         </div>

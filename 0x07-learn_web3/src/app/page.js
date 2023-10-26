@@ -40,7 +40,7 @@ const Home = () => {
                         value={userAccount}
                         onChange={(e) => setUserAccount((e.target.value).trim())}
                     />
-                    <Link href={{pathname: "/account", query: userAccount}} legacyBehavior>
+                    <Link href={{pathname: "/account/", query: userAccount}} legacyBehavior>
                         <a>
                         <SiMinutemailer onClick={accountAddress}/>
                         </a>
@@ -56,7 +56,7 @@ const Home = () => {
                                 <div className={Style.block}>
                                     <div className={Style.info}>
                                         <p className={Style.bk}>BK</p>
-                                        <Link href={{pathname: "/block", query: txn.number}}>
+                                        <Link href={{pathname: "/block/", query: txn.number}}>
                                             txn.number
                                         </Link>
                                     </div>
@@ -67,7 +67,7 @@ const Home = () => {
                                         <p>
                                             <span>
                                                 Miner: &nbsp; &nbsp;
-                                                <Link className={Style.link} href={{pathname: "/account", query: txn.miner}} legacyBehavior>
+                                                <Link className={Style.link} href={{pathname: "/account/", query: txn.miner}} legacyBehavior>
                                                     <a>
                                                         {txn.miner.slice(0, 6)}...{txn.miner.slice(-4)}
                                                     </a>
@@ -75,7 +75,7 @@ const Home = () => {
                                             </span>
                                         </p>
                                         <span>
-                                            <Link className={Style.link} href={{pathname: "/account", query: txn.number}} legacyBehavior>
+                                            <Link className={Style.link} href={{pathname: "/block/", query: txn.number}} legacyBehavior>
                                                 <a>
                                                     {txn.transactions.length}
                                                 </a>
@@ -104,7 +104,7 @@ const Home = () => {
                                     <div>
                                         <p className={Style.bx}>TX</p>
                                     </div>
-                                    <Link href={{pathname: "/transaction", query: tx }} legacyBehavior>
+                                    <Link href={{pathname: "/transaction/", query: tx }} legacyBehavior>
                                         <a>Hash: &nbsp; {tx.slice(0, 6)}...{tx.slice(-4)}</a>
                                     </Link>
                                 </div>
