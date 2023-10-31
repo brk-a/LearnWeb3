@@ -11,6 +11,7 @@ module.exports = {
     compilers: [
       {version: "0.8.19"},
       {version: "0.6.6"},
+      {version: "0.4.19"}
     ],
   },
   defaultNetwork: "hardhat",
