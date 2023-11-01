@@ -17,5 +17,8 @@
     "prettier-plugin-solidity": "^1.1.3",
     "solhint": "^4.0.0",
     "solidity-coverage": "^0.8.5"
+  },
+  "dependencies": {
+    "@aave/protocol-v2": "^1.0.1"
   }
 }

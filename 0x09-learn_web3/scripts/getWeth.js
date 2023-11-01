@@ -13,5 +13,6 @@ const getWeth = async () => {
 }
 
 module.exports = {
-    getWeth
+    getWeth,
+    AMOUNT
 }
